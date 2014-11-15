@@ -26,7 +26,7 @@ void		*mmalloc(size_t size)
 
   if (first)
     {
-      atexit(&free_all);
+      atexit(&_free_all);
       --first;
     }
   if ((new = malloc(sizeof(t_mgc_list))) == NULL
