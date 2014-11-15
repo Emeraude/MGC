@@ -3,7 +3,7 @@
 
 t_mgc_list	*mgc_list = NULL;
 
-static void	free_all()
+static void	_free_all()
 {
   t_mgc_list	*tmp;
   t_mgc_list	*rm;
