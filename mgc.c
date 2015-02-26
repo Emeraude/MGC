@@ -1,9 +1,9 @@
-#include <stdlib.h>
+#include <malloc.h>
 #include "mgc.h"
 
 t_mgc_list	*mgc_list = NULL;
 
-static void	_free_all()
+static void	__free_all()
 {
   t_mgc_list	*tmp;
   t_mgc_list	*rm;
@@ -26,11 +26,11 @@ void		*mmalloc(size_t size)
 
   if (first)
     {
-      atexit(&_free_all);
+      atexit(&__free_all);
       --first;
     }
-  if ((new = malloc(sizeof(t_mgc_list))) == NULL
-      || (allocated = malloc(size)) == NULL)
+  if (!(new = malloc(sizeof(t_mgc_list)))
+      || !(allocated = malloc(size)))
     return (NULL);
   new->ptr = allocated;
   new->next = mgc_list;

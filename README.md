@@ -5,5 +5,4 @@ It is really easy to use it ; you just have to call the **mmalloc** function ins
 
 ### Developper
 
-Emeraude  
-broggi_t@epitech.eu
+Emeraude
